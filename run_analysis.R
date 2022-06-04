@@ -604,3 +604,5 @@ y$activityname[y$activity == 6] <- 'LAYING'
 
 #===Calculate the mean of all features. Group by subject and activity=====
 tot_summary <- tot %>% group_by(subject, activity) %>% summarise_all(mean)
+
+write.table(tot_summary, file = 'summary.txt', row.names = FALSE)
